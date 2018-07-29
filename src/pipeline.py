@@ -116,7 +116,7 @@ def make_pipeline(state):
         task_func=stages.genotype_gvcf_gatk,
         name='genotype_gvcf_gatk',
         input=output_from('combine_gvcf_gatk'),
-        filter=suffix('.mergegvcf.vcf'),
+        filter=suffix('.mergedgvcf.vcf'),
         output='.genotyped.vcf')
 
     # SNP recalibration using GATK
