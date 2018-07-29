@@ -75,9 +75,9 @@ def run_stage(state, stage, command):
                 # machine or run it on the cluster
                 run_locally = run_local,
                 # Keep a copy of the job script for diagnostic purposes
-                retain_job_scripts = True,
-                retain_stdout = True,
-                retain_stderr = True,
+                #retain_job_scripts = True,
+                #retain_stdout = True,
+                #retain_stderr = True,
                 job_script_directory = state.options.jobscripts, 
                 job_other_options = job_options)
     except error_drmaa_job as err:
