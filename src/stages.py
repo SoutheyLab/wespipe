@@ -84,7 +84,7 @@ class Stages(object):
         '''Sort the BAM file using Picard'''
         picard_args = 'SortSam INPUT={bam_in} OUTPUT={sorted_bam_out} ' \
                       'VALIDATION_STRINGENCY=LENIENT SORT_ORDER=coordinate ' \
-                      'MAX_RECORDS_IN_RAM=5000000 CREATE_INDEX=True'.format(
+                      'MAX_RECORDS_IN_RAM=5000000 CREATE_INDEX=True TMP_DIR=`pwd`/tmp'.format(
                           bam_in=bam_in, sorted_bam_out=sorted_bam_out)
         self.run_picard('sort_bam_picard', picard_args)
 
@@ -95,7 +95,7 @@ class Stages(object):
         picard_args = 'MarkDuplicates INPUT={bam_in} OUTPUT={dedup_bam_out} ' \
                       'METRICS_FILE={metrics_out} VALIDATION_STRINGENCY=LENIENT ' \
                       'MAX_RECORDS_IN_RAM=5000000 ASSUME_SORTED=True ' \
-                      'CREATE_INDEX=True'.format(bam_in=bam_in, dedup_bam_out=dedup_bam_out,
+                      'CREATE_INDEX=True TMP_DIR=`pwd`/tmp'.format(bam_in=bam_in, dedup_bam_out=dedup_bam_out,
                           metrics_out=metrics_out)
         self.run_picard('mark_duplicates_picard', picard_args)
 
