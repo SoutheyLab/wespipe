@@ -12,7 +12,7 @@ from runner import run_stage
 import os
 
 PICARD_JAR = '/usr/local/picard/2.9.2/bin/picard.jar'
-GATK_JAR = '/usr/local/gatk/3.4/bin/gatk.jar'
+GATK_JAR = '/usr/local/gatk/3.4/bin/GenomeAnalysisTK.jar'
 
 def java_command(jar_path, mem_in_gb, command_args):
     '''Build a string for running a java command'''
